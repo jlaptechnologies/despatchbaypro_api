@@ -68,7 +68,7 @@ class DespatchBayProApiClient
             $this->soapOptions = array('login' => $apiUser, 'password' => $apiKey,
                                         'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP);
                                         
-            $this->connection  = WSDLENDPOINT . 'v' . $version . '/';
+            $this->connection  = self::WSDLENDPOINT . 'v' . $version . '/';
             
             $this->addressingService = new AddressingService($this->connection . 'addressing?wsdl', $this->soapOptions);
             $this->shippingService   = new ShippingService($this->connection . 'shipping?wsdl', $this->soapOptions);
