@@ -1,0 +1,11 @@
+{
+    "name": "lordvol/despatchbaypro_api",
+    "description": "Unnoficial dev branch of the DBPApiClient",
+    "authors": [
+        {
+            "name": "LordVol",
+            "email": "pletana@pletana.co.uk"
+        }
+    ],
+    "require": {}
+}
