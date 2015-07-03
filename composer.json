@@ -7,5 +7,10 @@
             "email": "pletana@pletana.co.uk"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-0": {
+            "DespatchBayProApiClient": "src/"
+        }
+    }
 }
