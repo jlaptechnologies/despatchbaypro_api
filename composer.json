@@ -10,7 +10,7 @@
     "require": {},
     "autoload": {
         "psr-0": {
-            "DespatchBayProApi": "src/"
+            "DespatchBayProApi\DespatchBayProApiClient": "src/"
         }
     }
 }
