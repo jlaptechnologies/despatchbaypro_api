@@ -12,5 +12,8 @@
         "psr-0": {
             "DespatchBayProApi": "src/"
         }
+        "psr-4": {
+            "DespatchBayProApi\\": "src/"
+        }
     }
 }
