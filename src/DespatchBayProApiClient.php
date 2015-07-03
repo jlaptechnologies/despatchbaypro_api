@@ -70,9 +70,9 @@ class DespatchBayProApiClient
                                         
             $this->connection  = WSDLENDPOINT . 'v' . $version . '/';
             
-            $this->addressingService = new AddressingService($this->connection . AddressingService::wsdlAddress, $this->soapOptions);
-            $this->shippingService   = new ShippingService($this->connection . ShippingService::wsdlAddress, $this->soapOptions);
-            $this->trackingService   = new TrackingService($this->connection . TrackingService::wsdlAddress, $this->soapOptions);
+            $this->addressingService = new AddressingService($this->connection . 'addressing?wsdl', $this->soapOptions);
+            $this->shippingService   = new ShippingService($this->connection . 'shipping?wsdl', $this->soapOptions);
+            $this->trackingService   = new TrackingService($this->connection . 'tracking?wsdl', $this->soapOptions);
             
             $success = true;
         } else {
