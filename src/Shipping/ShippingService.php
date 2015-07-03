@@ -6,7 +6,7 @@ class ShippingService
 {
     public $soapClient;
     
-    __construct($wsdlAddress,$soapOptions)
+    public function __construct($wsdlAddress,$soapOptions)
     {
         if ($wsdlAddress && $soapOptions) {
             $this->soapClient = new \SoapClient($wsdlAddress,$soapOptions);
