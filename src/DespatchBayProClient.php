@@ -8,7 +8,7 @@
  *
  */
 
-namespace DespatchBayProApiClient;
+namespace DespatchBayProApi;
 
 use DespatchBayProApi\Addressing\AddressingService;
 use DespatchBayProApi\Shipping\ShippingService;
