@@ -4,8 +4,11 @@ namespace DespatchBayProApi\Addressing;
 
 class AddressingService
 {
-
-    public $soapClient;
+    /**
+     * Stores the soapClient object after a successful connection is made
+     * @var \SoapClient
+     */
+    public $soapClient = null;
     
     public function __construct($wsdlAddress,$soapOptions)
     {
@@ -16,5 +19,22 @@ class AddressingService
             return false;
         }
     }
+    
+    public function getDomesticAddressKeysByPostcode($postcode=null)
+    {
+        $getDomesticAddressKeysByPostcodeResult = null;
+        if (!$this->soapClient || !$postcode) {
+            return false;
+        } else {
+            try {
+                $getDomesticAddressKeysByPostcodeResult = $this->soapClient->GetDomesticAddressKeysByPostcode($postcode);
+            } catch (Exception $e) {
+                return $e->getMessage();
+            }
+        }
+        return $getDomesticAddressKeysByPostcodeResult;
+    }
+    
+    public function 
 
 }
