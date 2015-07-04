@@ -64,17 +64,20 @@ class DespatchBayProApiClient
         $success = false;
         
         if ($apiUser !== null && $apiKey !== null) {
-            
-            $this->soapOptions = array('login' => $apiUser, 'password' => $apiKey,
-                                        'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP);
-                                        
-            $this->connection  = self::WSDLENDPOINT . 'v' . $version . '/';
-            
-            $this->addressingService = new AddressingService($this->connection . 'addressing?wsdl', $this->soapOptions);
-            $this->shippingService   = new ShippingService($this->connection . 'shipping?wsdl', $this->soapOptions);
-            $this->trackingService   = new TrackingService($this->connection . 'tracking?wsdl', $this->soapOptions);
-            
-            $success = true;
+            try {
+                $this->soapOptions = array('login' => $apiUser, 'password' => $apiKey,
+                                            'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP);
+                                            
+                $this->connection  = self::WSDLENDPOINT . 'v' . $version . '/';
+                
+                $this->addressingService = new AddressingService($this->connection . 'addressing?wsdl', $this->soapOptions);
+                $this->shippingService   = new ShippingService($this->connection . 'shipping?wsdl', $this->soapOptions);
+                $this->trackingService   = new TrackingService($this->connection . 'tracking?wsdl', $this->soapOptions);
+                
+                $success = true;
+            } catch(Exception $e) {
+                return $e->getMessage();
+            }
         } else {
             $success = false;
         }
