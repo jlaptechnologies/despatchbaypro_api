@@ -43,3 +43,5 @@ Temporary Items
 .apdisk
 
 /vendor/
+/src/index.php
+/public/
